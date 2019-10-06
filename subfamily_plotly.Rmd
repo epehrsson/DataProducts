@@ -1,0 +1,36 @@
+---
+title: "Coursera Data Products Week 3 Project"
+author: "Erica Pehrsson"
+date: "3/6/2019"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r load libraries, include=FALSE}
+library(plotly)
+```
+
+## Transposable element subfamilies
+
+Transposable element (TE) subfamilies represent a single entry of a transposable element into an ancestral genome. Here, subfamilies are from the hg19 build of the human genome, as annotated by RepeatMasker (downloaded from the UCSC Genome Browser). 
+
+```{r load subfamilies, echo=FALSE}
+subfamilies = read.table("TE_landscape/hg19_TE_subfamily.txt",sep='\t',header=TRUE)
+class_colors = setNames(c("#4A72E8","#FF6600","#006600","#cc0000","lightseagreen","#5C5C5C"),c("DNA","LINE","LTR","SINE","SVA","Other"))
+```
+
+---
+
+```{r plot, echo=FALSE}
+p <- plot_ly(subfamilies, x = ~Count, y = ~CpGs_per_kbp, z = ~intergenic, text = ~subfamily, color = ~class_update, colors = class_colors) %>%
+  add_markers() %>%
+  layout(scene = list(xaxis = list(title = 'Number of TEs',type="log"),
+                     yaxis = list(title = 'CpGs per kbp',type="log"),
+                     zaxis = list(title = '% intergenic')))
+p
+```
+
+The graph displays, for each subfamily, the TE class, number of individual insertions (log scale), average CpG density (log scale), and the proportion of elements that are intergenic. 

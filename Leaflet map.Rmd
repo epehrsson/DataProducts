@@ -1,0 +1,58 @@
+---
+title: "Presidential birthplaces"
+author: "Erica Pehrsson"
+date: "February 28, 2019"
+output: html_document
+---
+
+Map of the birth states of US presidents, colored by party. 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r load library, include=FALSE}
+library(leaflet)
+```
+
+```{r birthplaces data frame, echo=FALSE}
+# Load states
+states = read.table("states.txt",sep='\t',header=TRUE)
+
+# Load birthplaces
+birthplaces = read.table("birthplaces.txt",sep='\t',header=TRUE)
+birthplaces$State.of.birth = factor(birthplaces$State.of.birth,levels=levels(states$State))
+birthplaces[which(birthplaces$President == "Andrew Jackson"),]$State.of.birth = "South Carolina"
+
+# Load parties
+parties = read.table("parties.txt",sep='\t',header=TRUE)
+colnames(parties)[1] = "Number"
+parties$President = factor(parties$President,levels=levels(birthplaces$President))
+parties[is.na(parties)] = "William H. Taft"
+
+# Merge
+presidents = merge(parties,unique(birthplaces),by="President")
+presidents = merge(presidents,states,by.x="State.of.birth",by.y="State")
+```
+
+```{r make map, echo=FALSE}
+pal <- colorFactor(c("blue","purple","yellow","blue","red","red","grey","green","green"), presidents$Party)
+
+map <- leaflet(data=presidents) %>%
+  addTiles() %>%
+  addCircleMarkers(lng = ~Longitude, lat = ~Latitude, color = ~pal(Party), label= ~President, clusterOptions = markerClusterOptions())
+
+map
+```
+
+Party legend: Democratic (blue; see 1), Republican (red; see 2), Democratic-Republican (purple), Whig (green; see 3), Federalist (yellow), Unaffiliated (grey).
+
+1. Including Andrew Johnson, who switched from National Union
+2. Including Abraham Lincoln, who switched to National Union
+3. Including John Tyler, who switched to Unaffiliated
+
+References:
+
+* List of presidents: https://en.wikipedia.org/wiki/List_of_Presidents_of_the_United_States 
+* List of presidential birthplaces: https://en.wikipedia.org/wiki/List_of_Presidents_of_the_United_States_by_home_state
+* Latitude and longitude of states: https://inkplant.com/code/state-latitudes-longitudes

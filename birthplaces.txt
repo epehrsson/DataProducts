@@ -1,0 +1,46 @@
+President	Birthplace	State of birth
+George Washington	Westmoreland County	Virginia
+John Adams	Braintree	Massachusetts
+Thomas Jefferson	Shadwell	Virginia
+James Madison	Port Conway	Virginia
+James Monroe	Monroe Hall	Virginia
+John Quincy Adams	Braintree	Massachusetts
+Andrew Jackson	Waxhaws Region	South/North Carolina
+Martin Van Buren	Kinderhook	New York
+William Henry Harrison	Charles City County	Virginia
+John Tyler	Charles City County	Virginia
+James K. Polk	Pineville	North Carolina
+Zachary Taylor	Barboursville	Virginia
+Millard Fillmore	Summerhill	New York
+Franklin Pierce	Hillsborough	New Hampshire
+James Buchanan	Cove Gap	Pennsylvania
+Abraham Lincoln	Sinking Spring	Kentucky
+Andrew Johnson	Raleigh	North Carolina
+Ulysses S. Grant	Point Pleasant	Ohio
+Rutherford B. Hayes	Delaware	Ohio
+James A. Garfield	Moreland Hills	Ohio
+Chester A. Arthur	Fairfield	Vermont
+Grover Cleveland	Caldwell	New Jersey
+Benjamin Harrison	North Bend	Ohio
+Grover Cleveland	Caldwell	New Jersey
+William McKinley	Niles	Ohio
+Theodore Roosevelt	New York City	New York
+William H. Taft	Cincinnati	Ohio
+Woodrow Wilson	Staunton	Virginia
+Warren G. Harding	Blooming Grove	Ohio
+Calvin Coolidge	Plymouth	Vermont
+Herbert Hoover	West Branch	Iowa
+Franklin D. Roosevelt	Hyde Park	New York
+Harry S. Truman	Lamar	Missouri
+Dwight D. Eisenhower	Denison	Texas
+John F. Kennedy	Brookline	Massachusetts
+Lyndon B. Johnson	Stonewall	Texas
+Richard Nixon	Yorba Linda	California
+Gerald Ford	Omaha	Nebraska
+Jimmy Carter	Plains	Georgia
+Ronald Reagan	Tampico	Illinois
+George H. W. Bush	Milton	Massachusetts
+Bill Clinton	Hope	Arkansas
+George W. Bush	New Haven	Connecticut
+Barack Obama	Honolulu	Hawaii
+Donald Trump	Queens	New York
